@@ -1,23 +1,31 @@
-##ETL Project Report
-#Pandas II: The SQL
-####Rolando Navarro
-####Robert Ottogalli
-####Daniel Santa
-####Travis Tyler
+## ETL Project Report
+
+# Pandas II: The SQL
+
+#### Rolando Navarro
+
+#### Robert Ottogalli
+
+#### Daniel Santa
+
+#### Travis Tyler
 
 
-###EXTRACT: 
+### EXTRACT: 
+
 We pulled two CSV datasets from Kaggle (country population data and COVID-19 infection data), and two CSV datasets pertaining to mobility from the websites of Apple and Google. 
 
 
-####Links:
+#### Links:
+
 Population CSV
 Infection CSV
 Apple mobility data
 Google mobility data
 
 
-###TRANSFORM: 
+### TRANSFORM: 
+
 Using Jupyter Notebooks and Python/Pandas, we created four data frames using the data we extracted. We displayed them to get an idea of what information they contained. We made the following changes:
 
 
@@ -56,5 +64,6 @@ Using Jupyter Notebooks and Python/Pandas, we created four data frames using the
 
 
 
-###LOAD: 
+### LOAD: 
+
 Referencing the transformed data frames, we created an SQL schema in Postgres, with 3 tables, each corresponding to a different data frame. Using SQLAlchemy in our Jupyter Notebook, we created an engine and established a connection to the SQL tables. Then, with Panda’s to_sql() function, we populated the tables with the corresponding data frames. We used the “if_exists=’replace’” parameter in the to_sql() function so it would overwrite existing data in the tables and we wouldn’t have to drop the table and restart every time.
